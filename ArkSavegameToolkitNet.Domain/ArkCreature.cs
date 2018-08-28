@@ -84,7 +84,7 @@ namespace ArkSavegameToolkitNet.Domain
         public ArkCreature()
         {
             Colors = new sbyte[_colorSetIndices.Length];
-            BaseStats = new sbyte[_numberOfLevelUpPointsApplied.Length];
+            BaseStats = new byte[_numberOfLevelUpPointsApplied.Length];
         }
 
         public ArkCreature(IGameObject creature, IGameObject status, ISaveState saveState) : this()
@@ -104,7 +104,7 @@ namespace ArkSavegameToolkitNet.Domain
             if (status != null)
             {
                 BaseLevel = status.GetPropertyValue<int?>(_baseCharacterLevel) ?? 1;
-                for (var i = 0; i < BaseStats.Length; i++) BaseStats[i] = status.GetPropertyValue<sbyte?>(_numberOfLevelUpPointsApplied[i]) ?? 0;
+                for (var i = 0; i < BaseStats.Length; i++) BaseStats[i] = status.GetPropertyValue<byte?>(_numberOfLevelUpPointsApplied[i]) ?? 0;
             }
 
             if (creature.Location != null) Location = new ArkLocation(creature.Location, saveState);
@@ -122,7 +122,7 @@ namespace ArkSavegameToolkitNet.Domain
         [JsonConverter(typeof(StringEnumConverter))]
         public ArkCreatureGender Gender { get; set; }
         public sbyte[] Colors { get; set; }
-        public sbyte[] BaseStats { get; set; }
+        public byte[] BaseStats { get; set; }
         public ArkLocation Location { get; set; }
     }
 }
