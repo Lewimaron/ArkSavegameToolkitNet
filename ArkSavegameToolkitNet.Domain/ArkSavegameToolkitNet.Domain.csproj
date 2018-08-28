@@ -125,6 +125,12 @@
   <ItemGroup>
     <None Include="Resources\Aberration_Topographic_Map.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Crystal_Isles_Topographic_Map.jpg" />
+    <Content Include="Resources\ShigoIslands_Topographic_Map.jpg" />
+    <Content Include="Resources\TheVolcano_Topographic_Map.jpg" />
+    <Content Include="Resources\Valguero_Topographic_Map.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
